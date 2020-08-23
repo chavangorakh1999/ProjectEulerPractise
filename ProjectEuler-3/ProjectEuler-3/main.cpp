@@ -32,8 +32,16 @@ void primeFactor(unsigned long long n)
 
 int main()
 {
-    unsigned long long n;
-    cin>>n;
-    primeFactor(n);
+    unsigned long long num;
+    cin>>num;
+    int answer=0;
+    for (int i = 2; num != 1; i++) {
+        while (num % i == 0) {
+            num /= i;
+            answer = i;
+        }
+    }
+    cout<<answer<<endl;
+//    primeFactor(n);
     return 0;
 }
